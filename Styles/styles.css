@@ -1,0 +1,343 @@
+body {
+  background-color: #8cb3e1;
+}
+.bg{
+    background-color: #8cb3e1;
+}
+@font-face {
+  font-family: Orbitron;
+  src: url(../assets/Orbitron-VariableFont_wght.ttf);
+}
+/* Index Section */
+.homeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .5fr 1fr 1fr ;
+  row-gap: 20px;
+}
+.font1 {
+  font-family: Orbitron;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+.font2 {
+    font-family: Orbitron;
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+.rockPlacementHome {
+  grid-column: 2;
+  grid-row: 2;
+}
+.paperPlacementHome {
+  grid-column: 3;
+  grid-row: 2;
+}
+.scissorsPlacementHome {
+  grid-column: 4;
+  grid-row: 2;
+}
+.lizardPlacementHome {
+  grid-column: 5;
+  grid-row: 2;
+}
+.spockPlacementHome {
+  grid-column: 6;
+  grid-row: 2;
+}
+
+.iconSize {
+  height: 175px;
+  width: 175px;
+}
+.alignment {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerIcon {
+  width: 300px;
+  height: 300px;
+}
+
+.boxWhite{
+    background-color: white;
+  width: 400px;
+  height: 100px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: block;
+  border: none;
+}
+
+.boxBlue{
+    background-color: #5499E3;
+  width: 400px;
+  height: 100px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.rulesBox {
+    background-color: white;
+  width: 225px;
+  height: 65px;
+  border-radius: 10px;
+  border: none;
+}
+.rulesMargin{
+    margin-top: 5px;
+}
+.sPPlacement{
+    grid-column: 3/6;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+
+
+/* Index Section End */
+
+/* Mode Section */
+.modeGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr 1fr 1fr 1fr ;
+    row-gap: 20px;
+    column-gap: 20px;
+  }
+.modePlacement{
+    grid-column: 4;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+.modePlacement2{
+    grid-column: 4;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+.modePlacement3{
+    grid-column: 3;
+    grid-row: 3;
+   
+}
+
+.modePlacement4{
+    grid-column: 5;
+    grid-row: 3;
+   
+}
+
+.homeBtn{
+    background-color: white;
+    width: 225px;
+    height: 55px;
+    font-size: 30px;
+    font-family: Orbitron;
+    border-radius: 10px;
+    display: flex;
+    text-decoration: none;
+    display: block;
+}
+.font3{
+    font-size: 30px;
+    font-family: Orbitron;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decor{
+  text-decoration: none;
+    display: block;
+}
+/* Mode Section End*/
+
+/* Single Player Mode */
+.playGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: .1fr 1fr .2fr;
+  row-gap: 20px;
+}
+.handsGrid{
+  display: grid;
+  grid-template-columns: 1.5r 1fr 1fr 1fr 1.5fr;
+  grid-template-rows: 1fr ;
+  margin-top: 20px;
+}
+
+.rockPlacement {
+  grid-column: 1;
+  margin-left: 150px;
+}
+.paperPlacement{
+  grid-column: 2;
+}
+.scissorsPlacement {
+  grid-column: 3;
+}
+.lizardPlacement {
+  grid-column: 4;
+}
+.spockPlacement {
+  grid-column: 5;
+  margin-right: 150px;
+}
+
+.play{
+  font-family: Orbitron;
+  font-size: 60px;
+  color: white;
+  grid-column: 4;
+  text-align: center;
+}
+
+.playerPlacement{
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.playerSize{
+  width: 300px;
+  height: 300px;
+}
+
+.player2Placement{
+  grid-column: 5;
+  grid-row: 2;
+}
+
+.promptPlacement2{
+  grid-column: 4;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 80px;
+}
+.promptPlacement{
+    grid-column: 4;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    margin-top: 160px;
+    margin-left: 10px;
+}
+.playAgainPlacement{
+  grid-column: 4;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 400px;
+}
+
+.playAgain{
+  background-color: white;
+  width: 225px;
+  height: 55px;
+  font-size: 30px;
+  font-family: Orbitron;
+  border-radius: 10px;
+  display: flex;
+  text-decoration: none;
+  display: block;
+}
+
+.pointsPlacement{
+  grid-column: 3;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+}
+.pointsPlacement2{
+  grid-column: 5;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+}
+.pointsBox{
+  background-color: white;
+  width: 65px;
+  height: 95px;
+  border-radius: 10px;
+  
+}
+/* Single Player Mode End */
+
+.handsGrid button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.modalText{
+  font-family: Orbitron;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.modalSize{
+  width: 620px;
+  height: 600px;
+}
+
+button .btn-clos{
+    --bs-btn-close-color: #ffffff;
+}
+
+.hide{
+  display: none;
+}
+
+.promptFont{
+  font-size: 30px;
+}
+
+.draw{
+  background-color: white;
+}
+
+.win{
+  background-color: #81E354;
+}
+
+.lose{
+  background-color: #FA6961;
+}
+
+.width{
+  width: 390px;
+  
+}
