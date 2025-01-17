@@ -5,7 +5,7 @@ let player1Points = 0;
 let player2Points = 0;
 let cpuPoints = 0;
 
-let targetScore = 1;
+let targetScore = 0;
 let isGameActive = true;
 
 const home = document.getElementById('home')
@@ -19,17 +19,19 @@ const lizardImg = document.getElementById('lizardImg');
 const spockImg = document.getElementById('spockImg');
 const prompt = document.getElementById('prompt');
 const promptBox1 = document.getElementById('promptBox1');
+const prompt2 = document.getElementById('prompt2');
 const promptBox2 = document.getElementById('promptBox2');
 const playerIcon = document.getElementById('playerIcon');
 const player2Icon = document.getElementById('player2Icon');
 const suddenDeath = document.getElementById('suddenDeath');
-const bestTwo= document.getElementById('bestTwo');
 const bestThree = document.getElementById('bestThree');
-const bestFour = document.getElementById('bestFour');
+const bestFive = document.getElementById('bestFive');
 const bestSeven = document.getElementById('bestSeven');
 const player1Score = document.getElementById('player1Score');
 const player2Score = document.getElementById('player2Score');
 const cpuScore = document.getElementById('cpuScore');
+const homeBtn = document.getElementById('homeBtn');
+const showCpuGame = document.getElementById('showCpuGame');
 
 
 const playAgainPrompt = document.getElementById('playAgainPrompt');
@@ -41,13 +43,73 @@ const getChoice = async () => {
     return data
 }
 
-SinglePlayerBtn.addEventListener('click', () =>{
-    showMode.classList ="";
+SinglePlayerBtn.addEventListener('click', () => {
+    showMode.classList = "";
     home.classList = "hide";
 })
 
+suddenDeath.addEventListener('click', () => {
+    showMode.className = "hide";
+    showCpuGame.className = "";
+    promptBox2.className = "hide";
+    prompt2.className = "hide";
+    targetScore = 1;
+})
+
+bestThree.addEventListener('click', () => {
+    showMode.className = "hide";
+    showCpuGame.className = "";
+    promptBox2.className = "hide";
+    prompt2.className = "hide";
+    targetScore = 2;
+})
+
+bestFive.addEventListener('click', () => {
+    showMode.className = "hide";
+    showCpuGame.className = "";
+    promptBox2.className = "hide";
+    prompt2.className = "hide";
+    targetScore = 3;
+})
+
+bestSeven.addEventListener('click', () => {
+    showMode.className = "hide";
+    showCpuGame.className = "";
+    promptBox2.className = "hide";
+    prompt2.className = "hide";
+    targetScore = 4;
+})
+
+homeBtn.addEventListener('click', () => {
+    showMode.className = "hide";
+    showCpuGame.className = "hide"
+    home.className = "homeGrid"
+})
+
+function isGameOver() {
+    console.log("this is PlayerScore" + player1Score);
+    console.log("This is player2score" + cpuScore)
+    if (player1Points == targetScore) {
+        prompt2.innerText = "Player 1 WON!";
+        promptBox2.className = "boxBlue";
+        isGameActive = false;
+        return true;
+    } else if (cpuPoints == targetScore) {
+        prompt2.innerText = "You Lost!";
+        promptBox2.className = "boxBlue";
+        isGameActive = false;
+        return true;
+    } else {
+        console.log("Tie")
+    }
+    return false;
+}
+
+
 rockImg.addEventListener('click', async () => {
     let cpuChoice = await getChoice();
+    prompt2.className = "font1 m-4 promptFont"
+    promptBox2.className = "boxBlue"
     console.log(cpuChoice)
     playerIcon.src = "./assets/rock.png"
     player2Icon.src = `./assets/${cpuChoice.toLowerCase()}.png`;
@@ -73,15 +135,15 @@ rockImg.addEventListener('click', async () => {
             prompt.className = "font2 mt-4 promptFont width";
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Lizard":
             prompt.innerText = "Rock Beats Lizard";
             promptBox1.className = "boxBlue win"
-            player1Score++;
             player1Points++;
             player1Score.innerText = player1Points
-
+            isGameOver();
             break;
 
         case "Spock":
@@ -89,6 +151,7 @@ rockImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         default:
@@ -98,6 +161,8 @@ rockImg.addEventListener('click', async () => {
 
 paperImg.addEventListener('click', async () => {
     let cpuChoice = await getChoice();
+    prompt2.className = "font1 m-4 promptFont"
+    promptBox2.className = "boxBlue"
     console.log(cpuChoice)
     playerIcon.src = "./assets/paper.png"
     player2Icon.src = `./assets/${cpuChoice.toLowerCase()}.png`;
@@ -109,6 +174,7 @@ paperImg.addEventListener('click', async () => {
             player1Score++;
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Paper":
@@ -122,6 +188,7 @@ paperImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Lizard":
@@ -129,6 +196,7 @@ paperImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Spock":
@@ -136,6 +204,7 @@ paperImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue win"
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         default:
@@ -145,6 +214,8 @@ paperImg.addEventListener('click', async () => {
 
 scissorsImg.addEventListener('click', async () => {
     let cpuChoice = await getChoice();
+    prompt2.className = "font1 m-4 promptFont"
+    promptBox2.className = "boxBlue"
     console.log(cpuChoice)
     playerIcon.src = "./assets/scissors.png"
     player2Icon.src = `./assets/${cpuChoice.toLowerCase()}.png`;
@@ -155,6 +226,7 @@ scissorsImg.addEventListener('click', async () => {
             prompt.className = "font2 mt-4 promptFont";
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Paper":
@@ -162,6 +234,7 @@ scissorsImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue win width"
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Scissors":
@@ -175,6 +248,7 @@ scissorsImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue win"
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Spock":
@@ -182,6 +256,7 @@ scissorsImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         default:
@@ -191,6 +266,8 @@ scissorsImg.addEventListener('click', async () => {
 
 lizardImg.addEventListener('click', async () => {
     let cpuChoice = await getChoice();
+    prompt2.className = "font1 m-4 promptFont"
+    promptBox2.className = "boxBlue"
     console.log(cpuChoice)
     playerIcon.src = "./assets/lizard.png"
     player2Icon.src = `./assets/${cpuChoice.toLowerCase()}.png`;
@@ -201,6 +278,7 @@ lizardImg.addEventListener('click', async () => {
             prompt.className = "font2 mt-4 promptFont";
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Paper":
@@ -208,6 +286,7 @@ lizardImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue win"
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Scissors":
@@ -215,6 +294,7 @@ lizardImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Lizard":
@@ -228,6 +308,7 @@ lizardImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue win"
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         default:
@@ -237,6 +318,8 @@ lizardImg.addEventListener('click', async () => {
 
 spockImg.addEventListener('click', async () => {
     let cpuChoice = await getChoice();
+    prompt2.className = "font1 m-4 promptFont"
+    promptBox2.className = "boxBlue"
     console.log(cpuChoice)
     playerIcon.src = "./assets/spock.png"
     player2Icon.src = `./assets/${cpuChoice.toLowerCase()}.png`;
@@ -248,6 +331,7 @@ spockImg.addEventListener('click', async () => {
             prompt.className = "font2 mt-4 promptFont";
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Paper":
@@ -255,6 +339,7 @@ spockImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Scissors":
@@ -262,6 +347,7 @@ spockImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue win"
             player1Points++;
             player1Score.innerText = player1Points
+            isGameOver();
             break;
 
         case "Lizard":
@@ -269,6 +355,7 @@ spockImg.addEventListener('click', async () => {
             promptBox1.className = "boxBlue lose"
             cpuPoints++;
             cpuScore.innerText = cpuPoints
+            isGameOver();
             break;
 
         case "Spock":

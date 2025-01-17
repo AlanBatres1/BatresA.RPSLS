@@ -79,6 +79,7 @@ body {
   text-decoration: none;
   display: block;
   border: none;
+  cursor: pointer;
 }
 
 .boxBlue{
@@ -162,6 +163,7 @@ body {
     display: flex;
     text-decoration: none;
     display: block;
+    cursor: pointer;
 }
 .font3{
     font-size: 30px;
