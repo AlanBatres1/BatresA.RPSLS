@@ -36,6 +36,9 @@ const homeBtn = document.getElementById('homeBtn');
 const showCpuGame = document.getElementById('showCpuGame');
 const playAgainPrompt = document.getElementById('playAgainPrompt');
 const playAgain = document.getElementById('playAgain');
+const playerName = document.getElementById('playerName');
+const player2Name = document.getElementById('player2Name');
+
 
 const getChoice = async () => {
     try {
@@ -60,6 +63,8 @@ MultiplayerBtn.addEventListener('click', () => {
     isMultiplayerMode = true;
     prompt.innerText = "Player 1's Turn";
     player2Icon.src ="./assets/Player Icon.png"
+    playerName.innerText ="Player 1"
+    player2Name.innerText ="Player 2"
 });
 
 suddenDeath.addEventListener('click', () => {

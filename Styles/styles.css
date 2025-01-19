@@ -14,6 +14,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: .5fr 1fr 1fr ;
   row-gap: 20px;
+  column-gap: 30px;
 }
 .font1 {
   font-family: Orbitron;
@@ -194,11 +195,11 @@ body {
   grid-template-columns: 1.5r 1fr 1fr 1fr 1.5fr;
   grid-template-rows: 1fr ;
   margin-top: 20px;
+  column-gap: 30px;
 }
 
 .rockPlacement {
   grid-column: 1;
-  margin-left: 150px;
 }
 .paperPlacement{
   grid-column: 2;
@@ -211,7 +212,6 @@ body {
 }
 .spockPlacement {
   grid-column: 5;
-  margin-right: 150px;
 }
 
 .play{
