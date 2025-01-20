@@ -25,4 +25,5 @@ Spock vaporizes rock.
 On CPU mode - use any one the following random APIcalls : 
 Use your created API call to generate the CPU response 
 
-### Peer Review :
+### Peer Review : 
+I really like your code it was interesting to see your way of taking on this assignment I really like your UI design great job on that but when I play sudden death it tends to give the point to the cpu and not me besides that great code good job on the UI design looks amazing!
